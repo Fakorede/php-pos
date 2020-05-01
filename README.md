@@ -29,3 +29,10 @@
 - SweetAlert
 - jQuery Number
 - TCPDF
+
+### Models
+- User
+- Customers
+- Categories
+- Products
+- Sales

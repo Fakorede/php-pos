@@ -57,63 +57,63 @@
 DOCUMENT BODY
 ===========================================-->
 
-<body class="hold-transition skin-blue sidebar-collapse sidebar-mini">
-<!-- Site wrapper -->
-<div class="wrapper">
+<body class="hold-transition skin-blue sidebar-collapse sidebar-mini login-page">
 
 <?php
 
-
-/*============================================
-HEADER
-=============================================*/
-
-include "modules/header.php";
-
-
-/*============================================
-SIDEBAR MENU
-=============================================*/
-
-include "modules/menu.php";
-
-
-/*============================================
-BODY
-=============================================*/
-
-if(isset($_GET["route"])) {
-
-  if(
-    $_GET["route"] == "home" || 
-    $_GET["route"] == "users" ||
-    $_GET["route"] == "categories" || 
-    $_GET["route"] == "products" || 
-    $_GET["route"] == "clients" || 
-    $_GET["route"] == "sales" || 
-    $_GET["route"] == "create-sales" || 
-    $_GET["route"] == "reports"
-  ) 
+  if (isset($_SESSION["initialSession"]) && $_SESSION["initialSession"] == "ok") 
   {
-    include "modules/" . $_GET["route"] . ".php";
-  } else 
-  {
-    include "modules/404.php";
+    echo "<div class=\"wrapper\">";
+
+    /*============================================
+    HEADER
+    =============================================*/
+
+    include "modules/header.php";
+
+    /*============================================
+    SIDEBAR MENU
+    =============================================*/
+
+    include "modules/menu.php";
+
+    /*============================================
+    BODY
+    =============================================*/
+
+    if (isset($_GET["route"])) {
+
+        if (
+            $_GET["route"] == "home" ||
+            $_GET["route"] == "users" ||
+            $_GET["route"] == "categories" ||
+            $_GET["route"] == "products" ||
+            $_GET["route"] == "clients" ||
+            $_GET["route"] == "sales" ||
+            $_GET["route"] == "create-sales" ||
+            $_GET["route"] == "reports"
+        ) {
+            include "modules/" . $_GET["route"] . ".php";
+        } else {
+            include "modules/404.php";
+        }
+
+    }
+
+    /*============================================
+    FOOTER
+    =============================================*/
+
+    include "modules/footer.php";
+
+    echo "</div>";
+
+  } else {
+    include "modules/login.php";
   }
-
-}
-
-/*============================================
-FOOTER
-=============================================*/
-
-include "modules/footer.php";
-
 ?>
 
 
-</div>
-<!-- ./wrapper -->
 
 <script src="views/js/template.js"></script>
 
