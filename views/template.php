@@ -10,6 +10,9 @@
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
+  <!-- favicon -->
+  <link rel="icon" href="views/img/template/icono-negro.png">
+
   <!--==========================================
   CSS PLUGINS
   ===========================================-->
@@ -60,9 +63,50 @@ DOCUMENT BODY
 
 <?php
 
+
+/*============================================
+HEADER
+=============================================*/
+
 include "modules/header.php";
+
+
+/*============================================
+SIDEBAR MENU
+=============================================*/
+
 include "modules/menu.php";
-include "modules/content.php";
+
+
+/*============================================
+BODY
+=============================================*/
+
+if(isset($_GET["route"])) {
+
+  if(
+    $_GET["route"] == "home" || 
+    $_GET["route"] == "users" ||
+    $_GET["route"] == "categories" || 
+    $_GET["route"] == "products" || 
+    $_GET["route"] == "clients" || 
+    $_GET["route"] == "sales" || 
+    $_GET["route"] == "create-sales" || 
+    $_GET["route"] == "reports"
+  ) 
+  {
+    include "modules/" . $_GET["route"] . ".php";
+  } else 
+  {
+    include "modules/404.php";
+  }
+
+}
+
+/*============================================
+FOOTER
+=============================================*/
+
 include "modules/footer.php";
 
 ?>

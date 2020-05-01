@@ -2,7 +2,7 @@
     <!--==========================================
                         LOGO
     ===========================================-->
-    <a href="" class="logo">
+    <a href="home" class="logo">
         <!-- min logo -->
         <span class="logo-mini">
             <img src="views/img/template/icono-blanco.png" class="img-responsive" style="padding:10px">
