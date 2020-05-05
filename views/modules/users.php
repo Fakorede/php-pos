@@ -74,20 +74,73 @@ ADD USER MODAL
   <div class="modal-dialog">
 
     <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-        <h4 class="modal-title">Modal Header</h4>
-      </div>
+      <form action="#" method="post" role="form" enctype="multipart/form-data">
 
-      <div class="modal-body">
-        <p>Some text</p>
-      </div>
+        <div class="modal-header" style="background-color: #3c8dbc;color: #fff;">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h4 class="modal-title">Add User</h4>
+        </div>
 
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-      </div>
+        <div class="modal-body">
+
+          <div class="box-body">
+            <!-- Name -->
+            <div class="form-group">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                <input type="text" class="form-control input-lg" name="newName" placeholder="Enter Name" required>
+              </div>
+            </div>
+
+            <!-- Name -->
+            <div class="form-group">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-key"></i></span>
+                <input type="text" class="form-control input-lg" name="newUser" placeholder="Enter User" required>
+              </div>
+            </div>
+
+            <!-- Password -->
+            <div class="form-group">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                <input type="password" class="form-control input-lg" name="newPassword" placeholder="Enter Password" required>
+              </div>
+            </div>
+
+            <!-- Select Profile -->
+            <div class="form-group">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-users"></i></span>
+                <select name="newProfile" class="form-control input-lg">
+                  <option value="">Select Profile</option>
+                  <option value="Administrator">Administrator</option>
+                  <option value="Special">Special</option>
+                  <option value="Seller">Seller</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Picture -->
+            <div class="form-group">
+              <div class="panel">Picture</div>
+              <input type="file" name="newPicture" id="newPicture">
+              <p class="help-block">Maximum of 200mb</p>
+              <img src="views/img/users/default/anonymous.png" class="img-thumbnail" width="100px">
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary">Save Changes</button>
+        </div>
+
+      </form>
 
     </div>
 
