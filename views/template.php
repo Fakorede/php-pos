@@ -97,7 +97,8 @@ DOCUMENT BODY
             $_GET["route"] == "clients" ||
             $_GET["route"] == "sales" ||
             $_GET["route"] == "create-sales" ||
-            $_GET["route"] == "reports"
+            $_GET["route"] == "reports" ||
+            $_GET["logout"] == "logout"
         ) {
             include "modules/" . $_GET["route"] . ".php";
         } else {
