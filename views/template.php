@@ -41,6 +41,10 @@ session_start();
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 
+  <!-- Datatable -->
+  <link rel="stylesheet" href="views/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
+  <link rel="stylesheet" href="views/bower_components/datatables.net-bs/css/responsive.bootstrap.min.css">
+
   <!--==========================================
   JAVASCRIPT PLUGINS
   ===========================================-->
@@ -57,6 +61,12 @@ session_start();
   <!-- AdminLTE App -->
   <script src="views/dist/js/adminlte.min.js"></script>
 
+  <!-- Datatable -->
+  <script src="views/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+  <script src="views/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+  <script src="views/bower_components/datatables.net-bs/js/dataTables.responsive.min.js"></script>
+  <script src="views/bower_components/datatables.net-bs/js/responsive.bootstrap.min.js"></script>
+
 </head>
 
 <!--==========================================
@@ -67,8 +77,7 @@ DOCUMENT BODY
 
 <?php
 
-  if (isset($_SESSION["loggedIn"]) && $_SESSION["loggedIn"] == "ok") 
-  {
+if (isset($_SESSION["loggedIn"]) && $_SESSION["loggedIn"] == "ok") {
     echo "<div class=\"wrapper\">";
 
     /*============================================
@@ -115,9 +124,9 @@ DOCUMENT BODY
 
     echo "</div>";
 
-  } else {
+} else {
     include "modules/login.php";
-  }
+}
 ?>
 
 
