@@ -1,3 +1,9 @@
+<?php
+
+session_start();
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -61,7 +67,7 @@ DOCUMENT BODY
 
 <?php
 
-  if (isset($_SESSION["initialSession"]) && $_SESSION["initialSession"] == "ok") 
+  if (isset($_SESSION["loggedIn"]) && $_SESSION["loggedIn"] == "ok") 
   {
     echo "<div class=\"wrapper\">";
 
